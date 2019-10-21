@@ -10,14 +10,12 @@ public class Counter {
         return this.value;
     }
 
-    // public void increment() {
     public void increment() {
         this.sem.P();
         ++this.value;
         this.sem.V();
     }
 
-    // public void decrement() {
     public void decrement() {
         this.sem.P();
         --this.value;

@@ -18,7 +18,7 @@ public class BinarySemaphore {
         }
         this.state = false;
     }
-    
+
     // V — podnoszenie semafora (hol. verhogen). powoduje zwiekszanie wartości zmiennej semaforowej
     public synchronized void V() {
         this.state = true;
