@@ -9,8 +9,7 @@ public class BinarySemaphore {
         this.state = initialState;
     }
 
-    // P — opuszczanie semafora (hol. proberen), powoduje zmniejszenie wartości zmiennej semaforowej
-    public synchronized void P() {
+    public synchronized void P() { // P — opuszczanie semafora (hol. proberen), powoduje zmniejszenie wartości zmiennej semaforowej
         while (!this.state) {
             try {
                 this.wait();
@@ -19,9 +18,8 @@ public class BinarySemaphore {
         this.state = false;
     }
 
-    // V — podnoszenie semafora (hol. verhogen). powoduje zwiekszanie wartości zmiennej semaforowej
-    public synchronized void V() {
+    public synchronized void V() { // V — podnoszenie semafora (hol. verhogen). powoduje zwiekszanie wartości zmiennej semaforowej
         this.state = true;
-        this.notify();
+        this.notifyAll();
     }
 }
